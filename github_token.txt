@@ -1,0 +1,40 @@
+nycgp
+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
+
+
+1989646632@qq.com
+*********
+
+nycgp
+
+废弃----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
+
+
+
+学习记录：
+使用git 克隆code时记得 如果你只是下载clone下来而且不做提交等处理
+就使用https方式快捷方便
+如果你需要后续的更新提交处理那就
+最好使用ssh的方式  可以避免很多问题。
+
+ 向github上传代码时每次都要登陆的问题:
+昨天切到 Ubuntu下配了一下git，本来以为一切就绪，结果 git push的时候，要我输入github的用户名和密码，第二次 push 又要输。明明 ssh 的公钥以及放到了 github 上，去搜了一下，原来是自己 git clone的时候用了 https 方式，需要切换成 ssh 方式才可以。
+1、查看已经 git clone下来的代码的连接方式
+git remote -v
+如果是https的话，需要先移除当前关联的远端分支，然后重新以ssh方式关联：
+git remote rm origin
+git remote add origin [ssh地址]
+其中，origin是你本地的分支名（一般都是这个）
+现在，如果已经把本地 ssh的公钥提交到了github上，就不用再输入用户名密码了。
+
+1.1 git clone 时选 ssh 方式
+当然如果你还没有git clone工程，那就比较简单了， clone 时选择 ssh 方式即可。
+获取到的 url 大致是这个格式：
+git@github.com:username/project.git
+然后在终端执行
+git clone git@github.com:username/project.git
+
+over~
+从头开始部署（下面链接非常值得参考）
+https://www.zhihu.com/tardis/bd/art/312875677?source_id=1001
+
